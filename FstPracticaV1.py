@@ -1,6 +1,6 @@
 from tkinter import *
-from tkinter.ttk import *
-from tkinter.filedialog import askopenfile
+from tkinter import filedialog
+import re
 import os
 
 #Funciones de las opciones en el menu

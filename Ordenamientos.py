@@ -2,7 +2,6 @@
 
 Lista = [123,1,5,78,2,45]
 bandera = False
-bandera2 = False
 
 while bandera == False:
     bandera = True
@@ -14,7 +13,6 @@ while bandera == False:
             bandera = False #verifica que ya no hayan elementos desordenados para terminar el ciclo
 
 print(Lista)
-
 
 
 #Ordenamiento por seleccion: Se basa en la seleccion de los valores maximos y minimos
@@ -39,37 +37,6 @@ Ordenamiento_Selectivo(Lista)
 print(Lista)
 
 
-#Algoritmo de Busqueda lineal: Se busca en cada elemento de la lista hasta encontrar el que se quiere
-
-print("*******************************************************************************************")
-
-def Busqueda_Lineal(Abuscar, ListaNueva):
-    Encontrado = False
-    Dim = len(ListaNueva) 
-    Lista_Almacenamiento = []
-
-    for i in range(Dim):    #for para buscar y almacenar posiciones
-        if ListaNueva[i] == Abuscar:
-            Lista_Almacenamiento.append(Lista.index(Abuscar)+1)
-            Encontrado = True
-        else:
-            return Encontrado
-
-    if Encontrado != False:
-        print("Los elementos encontrados estan en las posiciones:")
-        for i in range(len(Lista_Almacenamiento)):   #For para mostrar posicion de encuentro o si no hay nada
-            #iba a validar que estuviera llena pero creo que no es necesario-----if Lista_Almacenamiento[i] != None:
-            print(Lista_Almacenamiento[i], end="")  # el end lo puedo omitir en caso no funcione luego
-            # aca iba un sino con un break por si el espacio fuera nulo, pero creo que no es necesario
-    else:
-        print("ELEMENTO NO ECONTRADO")
-
-Lista48 = [5,47,25,4,7,43]
-Busqueda_Lineal(25, Lista48)
-
-
-
-
 
 #metodo para buscar el elmento
 test_list = [[1, 54, 7, 2, 7, 7, 5, 7], [4, 5, 5, 2], [10, 5, 10, 5]] 
@@ -87,6 +54,46 @@ for i in range(len(test_list)): #For para obtener los arrays internos-tamaño 3
     array_original.append(List_index)
 
 print(array_original)
-#print(array_original)
 
+
+
+
+
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+#Funcion Para Realizar el ordenamiento de las listas
+#-------------------------------------------------------------------------------------------------------------------------------------
+def Ordenamiento(Lista):
+    bandera = False
+
+    while bandera == False:
+        bandera = True
+        for i in range(len(Lista)-1): #recorre la lista menos uno para que cabal compare el penultimo con el ultimo
+            if Lista[i] > Lista[i+1]: #condiciona los elementos para que se realice el cambio de ordenamiento
+                contenedor = Lista[i]
+                Lista[i] = Lista[i+1]
+                Lista[i+1] = contenedor
+                bandera = False #verifica que ya no hayan elementos desordenados para terminar el ciclo
+
+    return Lista    #Devuelve la LINEA ordenada
+
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+#Funcion Para Realizar la busqueda en las listas
+#-------------------------------------------------------------------------------------------------------------------------------------
+def Selective_Search(test_list): 
+    array_original = []
+    CONTADOR = 0
+
+    for i in range(len(test_list)): #For para obtener los arrays internos-tamaño 3
+        Lista_Interna = test_list[i]
+        DIM = len(Lista_Interna)
+        List_index = []
+
+        for j in range(DIM):    #for para obtener los numeros y compararlos
+        if Lista_Interna[j] == 5:
+            List_index.append(j)
+        array_original.append(List_index)
+
+    return      #Devuelve un array con la busqueda de todas las lineas en general
 
