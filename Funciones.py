@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 import re
 
+
 #-------------------------------------------------------------------------------------------------------------------------------------
 #Funcion Para Cargar las lineas completas
 #-------------------------------------------------------------------------------------------------------------------------------------
@@ -106,7 +107,7 @@ def Selective_Search(test_list, Buscar):
       List_index.append(i)
 
   if List_index == []:
-    array_original = "**NO SE ENCONTRO**"
+    array_original = "**NO ENCONTRADA**"
   else:
     array_original = List_index
 

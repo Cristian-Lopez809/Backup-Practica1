@@ -1,0 +1,70 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+}
+.header{
+	width: 800px;
+	margin: auto;
+	position: relative;
+}
+.logotipo{
+	display: inline-block;
+	margin-left: 0;
+}
+.titulos{
+	display: inline-block  ;
+	margin-left: 0px;
+	padding-bottom: : 5px;
+	font-size: 30px;
+}
+.portada button{
+	margin-bottom: 70px
+}
+.portada{
+	/*exadecimal #0000000*/
+	/*rgb(1,1,1)
+	rgba( opacidad extra)*/
+	background-image: url("Bg2.jpg");
+	color: white;
+	padding: 20px;
+
+}
+.titulo{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 70px;
+	margin-bottom: 0px;
+	margin-top: 70px;
+}
+
+.title-a{
+	font-size: 24px;
+	margin-top: 0;
+}
+.contenedor {
+	width: 800px;
+	margin: auto;	
+}
+table{
+	width: 100%;
+	margin: 20px;
+}
+th{
+	background: #273b47;
+	color: white;
+
+} 
+th{
+	padding: 10px;
+}
+
+td{
+	padding: 20px;
+}
+table, td, th{
+	border: 1px solid #273b47;
+	border-collapse: collapse;
+}
+.headeral{
+	width: 1000px;
+	margin: auto;
+}

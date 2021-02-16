@@ -3,6 +3,8 @@ from tkinter import filedialog
 import re
 import os
 from Funciones import *
+import webbrowser
+
 
 #Variables de acceso a las funciones
 Reading_Array = []
@@ -79,11 +81,65 @@ def Show_All():
         print("Numero a buscar: {", Array_Aux_ListSearched[i],"} Encontrado en la/s posición: ", Array_Listado_Buscados[i], ". De la lista No.", Encontrado_En[i]+1, ": ", Array_Aux_ListNum[Encontrado_En[i]])
         print("")
 
-def Show_All_Wb():
-    print("AllinFile")
+#def Show_All_Wb():
+def Lista_Desplagable():
+    Array_Aux_ListSearched = General_container[3]
+    Array_Aux_ListNum = General_container[2]
+    Contador_Linea = General_container[4] 
+    cadena = ""
+    for i in range(Contador_Linea):
+        cadena+="<tr>"
+        cadena+="<td>" + str("         Lista No." + str(i+1)  + ":  " + str(Array_Listas_Ordenadas[i]))   +  "</td>"
+        cadena+="</tr>"
+    for i in range(len(Encontrado_En)):
+        cadena+="<tr>"
+        cadena+="<td>" + str("Numero a buscar: " + str(Array_Aux_ListSearched[i]) + " Encontrado en la/s posición: "+ str(Array_Listado_Buscados[i]) + ". De la lista No." +  str(Encontrado_En[i]+1) + ": " + str(Array_Aux_ListNum[Encontrado_En[i]])) + "</td>"
+        cadena+="</tr>"
+    return cadena
+
+def datosHTML():
+    funcion= open("Tabla2.html", "wb")
+    abrir = """<html>
+    <head>
+        <meta charset="utf8" />
+        <title>Pizarra_De_Salidas</title>
+        <link rel="stylesheet" href="C:/Users/crist/OneDrive/Desktop/CursoHP/LAB LENGUAJES/Practica_1_V1\Fronted_P1.css">
+    </head>
+    <body>
+        <header id="header" class="header contenedor">	<!-- cabecera de la pagina web -->
+			<div class="headeral">
+				<figure class="logotipo"> <!-- Seccion para agregar imagenes -->
+					<img src="C:/Users/crist/OneDrive/Desktop/CursoHP/LAB LENGUAJES/Practica_1_V1\escudo.png"  width="100" height="100" alt="Escudo USAC">
+				</figure>
+				<h1 class="titulos"> Universidad de San Carlos de Guatemala</h1>
+			</div>
+	</header>
+	<section id="portada" class="portada ">	<!-- portada, divide por secciones -->
+		<!-- esta es un etiqueta que no añade valor semantico, solo efectos visuales -->
+		<div class="contenedor">
+			<h1 class="titulo">Analizador de datos</h1> 	<!-- Titulo -->
+			<h3 class="title-a">Salida del documento txt</h3> <!-- Resumen -->
+		</div>	
+	</section>
+        <div id="tabla">
+            <table class="table">"""
+    abrir+= Lista_Desplagable()
+    abrir+="""
+            </table>
+    </div>
+    </body>
+    </html>"""
+    funcion.write(bytes(abrir, 'utf-8', "ascii"))
+    funcion.close()
+    webbrowser.open_new_tab("Tabla2.html")
+
 
 def Exit():
-    print("Nombre")  
+    print("Carnet: 201904042")
+    print("Nombre: Cristian Aramis López Bautista")
+    print("Correo Electronico: cristianlb160@gmail.com")
+    print("Curso: Lenguajes Formales y de Programación")  
+    
 
 def Analyze_General(Doc_Leido):
     Lineas = Doc_Leido[0]
@@ -121,7 +177,7 @@ while True:
     elif Accion == 4:
         Show_All()
     elif Accion == 5:
-        Show_All_Wb()
+        datosHTML()
     elif Accion == 6:
         Exit()
         #evento de botton que contendra al break
