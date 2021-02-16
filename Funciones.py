@@ -112,3 +112,15 @@ def Selective_Search(test_list, Buscar):
     array_original = List_index
 
   return array_original     #Devuelve un array con la busqueda de todas las lineas en general
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+#Funcion Para detener la ejecucion 
+#-------------------------------------------------------------------------------------------------------------------------------------
+def detener():
+    while True:
+        tacladaso = input("seleccionar (E) para salir \n")
+        if tacladaso == "E" or tacladaso == "e":
+            break
+        else:
+            print("Ingresaste una tecla distinta")
+    return True

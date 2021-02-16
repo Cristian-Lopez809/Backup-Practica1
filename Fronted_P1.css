@@ -27,7 +27,7 @@ body{
 	background-image: url("Bg2.jpg");
 	color: white;
 	padding: 20px;
-
+	margin-bottom: 30px;
 }
 .titulo{
 	font-family: 'Montserrat', sans-serif;
@@ -45,8 +45,13 @@ body{
 	margin: auto;	
 }
 table{
+	
 	width: 100%;
 	margin: 20px;
+	width: 1000px;
+	margin: auto;
+	position: relative;
+
 }
 th{
 	background: #273b47;

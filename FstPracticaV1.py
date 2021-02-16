@@ -117,8 +117,8 @@ def datosHTML():
 	<section id="portada" class="portada ">	<!-- portada, divide por secciones -->
 		<!-- esta es un etiqueta que no añade valor semantico, solo efectos visuales -->
 		<div class="contenedor">
-			<h1 class="titulo">Analizador de datos</h1> 	<!-- Titulo -->
-			<h3 class="title-a">Salida del documento txt</h3> <!-- Resumen -->
+			<h1 class="titulo">Salida General De Listas</h1> 	<!-- Titulo -->
+			<h3 class="title-a">Ordenamientos y Buscadas</h3> <!-- Resumen -->
 		</div>	
 	</section>
         <div id="tabla">
@@ -138,7 +138,11 @@ def Exit():
     print("Carnet: 201904042")
     print("Nombre: Cristian Aramis López Bautista")
     print("Correo Electronico: cristianlb160@gmail.com")
-    print("Curso: Lenguajes Formales y de Programación")  
+    print("Curso: Lenguajes Formales y de Programación") 
+    print("")
+    detener()
+
+    
     
 
 def Analyze_General(Doc_Leido):
